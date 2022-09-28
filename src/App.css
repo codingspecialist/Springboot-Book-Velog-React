@@ -1,0 +1,632 @@
+/* reset css  */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video,textarea {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+button {
+  background-color: #fff;
+  border: none;
+  outline: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* reset / */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+:root {
+  --bg-page1: #F8F9FA;
+    --bg-page2: #FFFFFF;
+    --bg-element1: #FFFFFF;
+    --bg-element2: #F8F9FA;
+    --bg-element3: #E9ECEF;
+    --bg-element4: #DEE2E6;
+    --bg-element5: #212529;
+    --bg-element6: #343A40;
+    --bg-element7: #FFFFFF;
+  --text1: #212529;
+  --text2: #495057;
+  --text3: #868E96;
+  --text4: #CED4DA;
+  --border1: #343A40;
+  --border2: #ADB5BD;
+  --border3: #DEE2E6;
+  --border4: #F1F3F5;
+  --primary1: #12B886;
+  --primary2: #20C997;
+  --destructive1: #FF6B6B;
+  --destructive2: #FF8787;
+  --max-width: 780px;
+  --default-width: 90%;
+  --login-width: 640px;
+}
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text2);
+  letter-spacing: -1px;
+}
+.App {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  position: relative;
+ 
+}
+header .nav {
+  display: flex;
+  align-items: center;
+}
+header .menu {
+  position: absolute;
+  right: 0;
+  top: 80px;
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.2);
+  padding: 1.5rem;
+  width: 160px;
+  line-height: 30px;
+  display: none;
+  z-index: 10;
+  background-color: #fff;
+}
+header .menu.on {
+  display: block;
+}
+.navitem {
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+.nav button {
+  background-color: none;
+  border-radius: 15px;
+  line-height: 30px;
+  border: 1px solid var(--border1);
+  padding: 0 1rem;
+  outline: none;
+}
+.nav button:hover {
+  background-color: var(--border1);
+  color: #fff;
+}
+.nav .user {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--primary1);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 2.5rem;
+  color: #fff;
+}
+.islogin {
+  display: none;
+}
+.islogin.on {
+  display: block;
+}
+
+
+/* 메인 스타일 */
+.mainList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.listBox {
+  width: 23%;
+  margin: 1% 1%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+  transition: 0.5s;
+}
+.listBox:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 1px 8px rgba(0,0,0,0.3);
+}
+.listImgBox {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  position: relative;
+}
+.listImgBox img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.listTextBox {
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 160px;
+  border-bottom: 1px solid var(--border4);
+}
+.listTextBox h3 {
+  font-size: 1.2rem;
+}
+.listDayComment {
+  font-size: 0.8rem;
+  color: var(--text3)
+}
+.listUserBox {
+  padding: 0.8rem;
+  font-size: 0.8rem;
+}
+.listUserBox span {
+  color: var(--text3);
+  padding-right: 0.5rem;
+}
+
+/* 상세보기 스타일 */
+.detailView h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.detailView > div {
+  padding: 2rem 0;
+}
+.detailView img {
+  border-radius: 1rem;
+}
+.detailView p {
+  color: var(--text3);
+  padding-bottom: 2rem;
+}
+
+/* 프로필 스타일 */
+.profile {
+  display: flex;
+  align-items: center;
+  border-bottom:1px solid var(--border3);
+  margin: 2rem 0;
+}
+.profile .photo {
+  padding-right: 2rem;
+  width: 20%;
+}
+.profile .photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.profile h3 {
+  font-size: 1.8rem;
+}
+
+/* 이전포스트 다음포스트 버튼 스타일 */
+.postBtnDiv {
+  display: flex;
+  justify-content: space-between;
+}
+.postBtn {
+  width: 40%;
+  background-color: var(--bg-element2);
+  padding: 1.6rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.svgDiv {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border: 1px solid var(--primary2);
+    font-size: 1.5rem;
+    color: var(--primary2);
+    position: relative;
+    transition: 0.5s;
+}
+
+.rightBtn {
+  flex-direction: row-reverse;
+}
+.leftBtn .svgDiv {
+  margin-right: 1rem;
+  left: 0;
+}
+.leftBtn:hover .svgDiv {
+  left: -10px;
+}
+.rightBtn .svgDiv {
+  margin-left: 1rem;
+  right: 0;
+}
+.rightBtn:hover .svgDiv {
+  right: -10px;
+}
+
+/* 댓글 쓰기 스타일 */
+.commentWrite {
+  padding-bottom: 2rem;
+}
+.commentWrite textarea {
+  width: 100%;
+  height: 120px;
+  border: 1px solid var(--border3);
+  outline: none;
+  resize: none;
+  padding: 1rem;
+}
+.commentWrite button {
+  float: right;
+  background-color: var(--primary2);
+  border-radius: 0.5rem;
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+/* 댓글 리스트 스타일 */
+.commentLists li {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border4);
+}
+
+/* 댓글 프로필 스타일 */
+.commentProfiles {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+.commentProfiles .img {
+  width: 10%;
+  padding-right: 2rem;
+}
+.commentProfiles .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.commentProfiles span {
+  color: var(--text3)
+}
+.comment {
+  font-size: 1.2rem;
+}
+/* 공통 스타일 */
+.subpage {
+  width: var(--default-width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+/* search 스타일 */
+.searchdiv {
+  border: 1px solid var(--border2);
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.searchdiv input {
+  border: 0;
+  outline: none;
+  width: 80%;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+}
+.searchList {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border3);
+}
+.searchList div {
+  padding: 1rem 0;
+}
+.searchList h2 {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+.searchList img {
+  width: 100%;
+}
+.searchProfile {
+  display: flex;
+  align-items: center;
+}
+.searchProfile .photo {
+  width: 8%;
+  padding-right: 1rem;
+}
+.searchProfile .photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.searchPage .registdate {
+  color: var(--text4);
+} 
+
+/* 로그인 스타일 */
+.bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 80vh;
+}
+
+.bg .box {
+  width: var(--default-width);
+  max-width: var(--login-width);
+  height: 40vh;
+  background-color: #fff;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  display: flex;
+}
+
+
+.memberImg {
+  width: 35%;
+  padding: 2rem;
+  background: var(--bg-element2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 3rem;
+}
+.memberImg img {
+  width: 100%;
+}
+.memberform {
+  width: 65%;
+  padding: 2rem;
+}
+.memberform .exit-wrapper{
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  font-size: 1.5rem;
+  color: var(--text3);
+  margin-bottom: 2.25rem;
+  height: 10%;
+}
+.block-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+.block-content h2 {
+  font-size: 1.6rem;
+}
+.block-content section {
+  width: 100%;
+}
+.block-content h4 {
+  
+  font-size: 1.2rem;
+  padding-bottom: 1rem;
+  color : var(--text3);
+}
+.block-content input {
+  width: 90%;
+  border: 1px solid var(--border3);
+  outline: none;
+  padding: 1rem;
+  
+}
+.upper-wrapper {
+  width:100%; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.upper-wrapper section {
+  width: 100%;
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-end;
+}
+.loginForm button {
+  width: 30%;
+  padding: 1rem;
+  color: #fff;
+  background-color: var(--primary2);
+  cursor: pointer;
+}
+.footer {
+  text-align: right;
+  width:100%;
+}
+.footer span {
+  color: var(--primary2);
+  cursor: pointer;
+}
+
+/* 유저정보 setting */
+
+.setting .userInfo li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border3);
+}
+.setting .userInfo li span {
+  display: inline-block;
+  font-size: 1.2rem;
+  width: 200px;
+}
+.userImage {
+  padding: 80px 0;
+}
+.userImage .userPhoto{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #FF6B6B;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 180px;
+}
+.userImage .userPhoto img {
+  width: 100%;
+}
+.userButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.userButton button {
+  border: 0;
+  outline: 0;
+  width: 200px;
+  line-height: 38px;
+  margin-top: 10px;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: var(--primary2)
+}
+.userButton .imgupBtn {
+  background-color: var(--primary2);
+  color: #fff;
+}
+.userButton input {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.userButton .imgdelBtn:hover {
+  background-color: var(--bg-element3);
+}
+.userInfo span.edit {
+  float: right;
+  background-color: var(--primary2);
+  color: #fff;
+  cursor: pointer;
+  line-height: 38px;
+  padding: 0 2rem;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+.userInfo input {
+  border: 1px solid var(--border3);
+  padding: 1rem;
+  width: 90%;
+  max-width:480px;
+}
+
+/* 내 벨로그 */
+.myvelog {
+  display: flex;
+}
+.myvelog > div:nth-child(1) {
+  width:25%;
+}
+.myvelog > div:nth-child(1) > div {
+  position: absolute;
+  top: 50vh;
+  width: calc(var(--max-width) * 0.25);
+  transform: translateY(-50%);
+}
+.myvelog > div:nth-child(1) > div h3 {
+  font-size: 1.2rem;
+  border-bottom: 1px solid var(--border3);
+  line-height: 40px;
+  cursor: pointer;
+}
+.myvelog > div:nth-child(1) > div li {
+  line-height: 40px;
+  border-bottom: 1px dotted var(--border3);
+  color: var(--text3);
+  cursor: pointer;
+}
+.myvelog > div:nth-child(2) {
+  width:75%;
+  padding-left: 2rem;
+}
+.myVelogList {
+  padding: 2rem 0;
+}
+.myvelogContents .profile {
+  margin: 0;
+  padding-bottom: 1rem;
+}
+.myVelogList:not(:last-child) {
+  border-bottom: 1px solid var(--border3);
+}
+.myVelogList h3 {
+  padding-bottom: 1rem;
+  font-size: 1.4rem;
+}
+.myVelogList * {
+  padding: 0.6rem 0;
+}
+.myVelogList img {
+  width: 100%;
+}
+.myVelogList p:last-child {
+  color: var(--text3);
+}
