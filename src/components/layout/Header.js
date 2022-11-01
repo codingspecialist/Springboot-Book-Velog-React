@@ -1,7 +1,7 @@
 import React,{ useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { isLoginCheck, isMenuCheck } from "../modules/members";
+import { isLoginCheck, isMenuCheck } from "../../modules/members";
 
 const Header = () => {
    

@@ -1,22 +1,6 @@
-import { useState } from "react";
-import { useSelector,useDispatch } from "react-redux";
+
 import { Link } from "react-router-dom";
-import { isMenuCheck,editMember } from '../modules/members';
-const Setting = () => {
-    const loginMember = useSelector(state => state.members.loginMember)
-    const [userImg, setUserImg] = useState(loginMember.imgsrc)
-    const dispatch = useDispatch();
-    dispatch(isMenuCheck(false));
-    const imgChange = (e) => {
-        const imgurl = e.target.value;
-        const imgstr = "images/"+imgurl.substr(imgurl.lastIndexOf('\\')+1)
-        setUserImg(imgstr)
-        dispatch(editMember(loginMember.userId, { imgsrc:imgstr }))
-    }
-    const imgDel = () => {
-        setUserImg("")
-        dispatch(editMember(loginMember.userId, { imgsrc:"" }))
-    }
+const Body = ({userImg, loginMember,imgDel, imgChange}) => {
     return (
         <div className="setting subpage">
             <div className="userImage">
@@ -42,4 +26,4 @@ const Setting = () => {
         </div>
     )
 }
-export default Setting;
+export default Body;

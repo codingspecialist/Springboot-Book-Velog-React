@@ -1,15 +1,16 @@
 import './App.css';
-import Header from './components/Header';
-import ListDetail from './components/ListDetail';
-import Main from './components/Main';
+import Header from './components/layout/Header';
 import { Routes, Route} from 'react-router-dom';
-import Search from './components/Search';
-import Login from './components/Login';
-import Setting from './components/Settiing';
-import UserEdit from './components/UserEdit';
-import MyVelog from './components/MyVelog';
 import { useSelector } from 'react-redux';
-import Write from './components/Write';
+import HomePage from './pages/HomePage';
+import DetailPage from './pages/DetailPage';
+import MyPage from './pages/MyPage';
+import SearchPage from './pages/SearchPage';
+import LoginPage from './pages/LoginPage';
+import JoinPage from './pages/JoinPage';
+import MyInfoPage from './pages/MyInfoPage';
+import EditPage from './pages/EditPage';
+import WritePage from './pages/WritePage';
 
 
 function App() {
@@ -20,14 +21,15 @@ function App() {
     <div className="App">
       <Header/>
       <Routes>
-         <Route  path="/" element={<Main lists={lists}/>} />
-         <Route  path="/search" element={<Search/>} />
-         <Route  path="/listview/:id" element={<ListDetail/>} />
-         <Route path="/login" element={<Login/>}/>
-         <Route path="/setting" element={<Setting/>}/>
-         <Route path="/useredit" element={<UserEdit/> } />
-         <Route path="/myvalog" element={<MyVelog memberLists={memberLists}/>} />
-         <Route path="/write" element={<Write/>} />
+         <Route path="/" element={<HomePage lists={lists}/>} />
+         <Route path="/search" element={<SearchPage />} />
+         <Route path="/listview/:id" element={<DetailPage/>} />
+         <Route path="/login" element={<LoginPage/>}/>
+         <Route path="/join" element={<JoinPage />}/>
+         <Route path="/setting" element={<MyInfoPage/> }/>
+         <Route path="/useredit" element={<EditPage/> } />
+         <Route path="/myvalog" element={<MyPage memberLists={memberLists} />} />
+         <Route path="/write" element={<WritePage/>} />
       </Routes>   
      
     </div>

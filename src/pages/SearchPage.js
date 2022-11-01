@@ -1,9 +1,9 @@
-import SearchInput from "./SearchInput";
+
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import SearchLists from "./SearchLists";
 import { isMenuCheck } from '../modules/members';
-const Search = () => {
+import Body from "../components/search/Body";
+const SearchPage = () => {
     const [searchLists, setSearchLists ] = useState([]);
     const lists = useSelector(state=>state.bloglists.lists);
     const dispatch = useDispatch();
@@ -16,10 +16,7 @@ const Search = () => {
         } 
     }
     return (
-        <div className="searchPage subpage">
-            <SearchInput onTextChange={onTextChange} />
-            <SearchLists searchLists={searchLists}  />
-        </div>
+        <Body onTextChange={onTextChange} searchLists={searchLists} />
     )
 }
-export default Search;
+export default SearchPage;

@@ -1,12 +1,12 @@
 import React from 'react';
-import Lists from './Lists';
 import { useDispatch } from 'react-redux';
 import { isMenuCheck } from '../modules/members';
-const Main = ({ lists }) => {
+import Body from '../components/home/Body';
+const HomePage = ({ lists }) => {
   const dispatch = useDispatch();
   dispatch(isMenuCheck(false));
   return (
-    <Lists lists={lists} listname="mainList"/>
+    <Body lists={lists} />
   );
 };
-export default Main;
+export default HomePage;
